@@ -24,12 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $id = session()->getId();
-        $blogs = Blog::where('author_id', $id)->FindOrFail();
+        $blogs = Blog::all();
         return view('users.index', [
             'blogs' => $blogs,
         ]);
-
-//        return view('users.index');
     }
 }

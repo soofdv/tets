@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Blog;
+use \App\Models\User;
 
 class UsersController extends Controller
 {
@@ -12,10 +13,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $id = session()->getId();
-        $blogs = Blog::where('author_id', $id)->FindOrFail();
+        $blogs = Blog::all();
         return view('users.index', [
             'blogs' => $blogs,
         ]);
@@ -34,7 +34,7 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,45 +45,61 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
+        $user = User::findOrFail($id);
+        return view('users.show', [
+            'user' => $user,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
+        $user = User::findOrFail($id);
+        return view('users.edit', [
+            'user' => $user,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::FindOrFail($id);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+        return redirect()->route('users.show', $user->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+
+        return redirect()->route('frontpage');
     }
 }
