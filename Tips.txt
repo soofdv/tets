@@ -1,3 +1,5 @@
 https://laravelarticle.com/laravel-8-authentication-tutorial 
 
 https://www.youtube.com/watch?v=X-FPCwZFU_8 
+
+https://github.com/TowlieeNetworks/laravel-boilerplate-auth
