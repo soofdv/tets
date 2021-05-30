@@ -5,3 +5,5 @@ https://www.youtube.com/watch?v=X-FPCwZFU_8
 https://github.com/TowlieeNetworks/laravel-boilerplate-auth
 
 https://blog.packagist.com/composer-2-0-is-now-available/
+
+https://laravel.com/docs/8.x/starter-kits
