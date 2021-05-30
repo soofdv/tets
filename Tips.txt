@@ -1,9 +1,9 @@
-https://laravelarticle.com/laravel-8-authentication-tutorial 
+https://laravelarticle.com/laravel-8-authentication-tutorial -- auth handmatige installeren
 
-https://www.youtube.com/watch?v=X-FPCwZFU_8 
+https://www.youtube.com/watch?v=X-FPCwZFU_8 -- npm install
 
-https://github.com/TowlieeNetworks/laravel-boilerplate-auth
+https://github.com/TowlieeNetworks/laravel-boilerplate-auth -- mennos boilerplate breeze
 
-https://blog.packagist.com/composer-2-0-is-now-available/
+https://blog.packagist.com/composer-2-0-is-now-available/ -- composer update
 
-https://laravel.com/docs/8.x/starter-kits
+https://laravel.com/docs/8.x/starter-kits -- breeze
